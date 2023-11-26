@@ -1,8 +1,10 @@
 {
-	"name": "musync",
-	"version": "0.1.0",
-	"main": "index.js",
+	"name": "musync-extension",
+	"description": "Sincronize suas músicas entre dispositivos e serviços.",
+	"author": "Gepetojj <contato.gepetojj@gmail.com>",
+	"version": "0.1.1",
 	"license": "MIT",
+	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon",
 		"prebuild": "rimraf dist",
@@ -32,6 +34,7 @@
 		"cross-env": "7.0.3",
 		"css-loader": "6.8.1",
 		"cssnano": "6.0.1",
+		"cz-conventional-changelog": "^3.3.0",
 		"html-webpack-plugin": "5.5.1",
 		"mini-css-extract-plugin": "2.7.6",
 		"nodemon": "3.0.1",
@@ -81,5 +84,10 @@
 			"@babel/plugin-syntax-dynamic-import",
 			"@babel/plugin-proposal-class-properties"
 		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
 	}
 }
