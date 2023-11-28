@@ -3,7 +3,7 @@ import React from "react";
 import { SERVICES } from "../utils/services";
 import DeviceQuery from "./DeviceQuery";
 
-export default function PlayingNow({ serviceId, devices }) {
+export default function PlayingNow({ serviceId, players }) {
 	const service = SERVICES[serviceId];
 
 	return (
@@ -17,8 +17,8 @@ export default function PlayingNow({ serviceId, devices }) {
 					/>
 					<h3 className="text-sm font-medium">Tocando agora no {service.name}:</h3>
 				</header>
-				{devices.length > 0 ? (
-					devices.map(device => <DeviceQuery key={device.id} device={device} />)
+				{players.length > 0 ? (
+					players.map(player => <DeviceQuery key={player.id} player={player} />)
 				) : (
 					<>
 						<h2 className="text-center font-medium text-sm italic">

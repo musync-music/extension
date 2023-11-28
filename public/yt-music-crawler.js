@@ -12,7 +12,7 @@ setInterval(() => {
 	const id = data.video_id;
 	const title = data.title;
 	const artist = data.author;
-	const link = api.getVideoUrl();
+	const url = api.getVideoUrl();
 
 	const message = {
 		type: "playback",
@@ -20,7 +20,7 @@ setInterval(() => {
 			id,
 			title,
 			artist,
-			link,
+			url,
 		},
 	};
 

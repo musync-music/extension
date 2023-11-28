@@ -1,18 +1,20 @@
 import React from "react";
 
-export default function DeviceQuery({ device }) {
-	if (!device) return null;
+export default function DeviceQuery({ player }) {
+	if (!player) return null;
 
 	return (
 		<>
 			<section className="flex flex-col gap-2 truncate">
-				<span className="font-light text-xs">Reproduzindo em: {device.name}</span>
+				<span className="font-light text-xs">
+					Reproduzindo em: {player.device.name || player.media.id}
+				</span>
 				<div className="flex items-center gap-2 truncate">
-					{device.media ? (
+					{player.media ? (
 						<>
 							<a
 								className="flex justify-center items-center p-1 bg-violet-600 rounded-xl"
-								href={device.media.link}
+								href={player.media.url}
 								target="_blank"
 							>
 								<svg
@@ -30,10 +32,10 @@ export default function DeviceQuery({ device }) {
 								</svg>
 							</a>
 							<div className="truncate">
-								<h4 className="font-medium">{device.media.title}</h4>
+								<h4 className="font-medium">{player.media.title}</h4>
 								<span className="font-light">
-									{device.media.artist}
-									{device.media.album ? " • " + device.media.album : null}
+									{player.media.artist}
+									{player.media.album ? " • " + player.media.album : null}
 								</span>
 							</div>
 						</>
