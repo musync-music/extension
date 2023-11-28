@@ -16,6 +16,7 @@ setInterval(() => {
 
 	const message = {
 		type: "playback",
+		serviceId: "yt-music",
 		media: {
 			id,
 			title,
@@ -24,6 +25,6 @@ setInterval(() => {
 		},
 	};
 
-	const event = new CustomEvent("yt-music-data", { detail: message });
+	const event = new CustomEvent("crawler-data", { detail: message });
 	window.dispatchEvent(event);
 }, 1000);

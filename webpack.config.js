@@ -54,6 +54,7 @@ module.exports = {
 				{ from: "./public/content.js", to: "content.js" },
 				{ from: "./public/sw.js", to: "sw.js" },
 				{ from: "./public/yt-music-crawler.js", to: "yt-music-crawler.js" },
+				{ from: "./public/spotify-crawler.js", to: "spotify-crawler.js" },
 				{ from: "./public/icons", to: "icons" },
 			],
 		}),

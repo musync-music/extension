@@ -19,6 +19,7 @@ chrome.storage.sync.get("userId", items => {
 });
 
 chrome.runtime.onMessage.addListener(req => {
+	console.log(req);
 	chrome.storage.sync.get(["userId", "deviceName", "party"], items => {
 		const deviceId = items.userId;
 		const deviceName = items.deviceName;
@@ -26,10 +27,9 @@ chrome.runtime.onMessage.addListener(req => {
 
 		const body = {
 			party,
-			serviceId: "yt-music",
 			deviceId,
 			deviceName,
-			media: req.media,
+			media: { ...req.media, service: req.serviceId },
 		};
 
 		fetch(`https://musyncmusic.vercel.app/api/log/sync`, {

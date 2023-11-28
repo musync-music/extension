@@ -16,7 +16,7 @@ interface PostHandlerBody {
 */
 
 window.addEventListener(
-	"yt-music-data",
+	"crawler-data",
 	event => {
 		data = event.detail;
 	},

@@ -2,7 +2,7 @@
 	"name": "musync-extension",
 	"description": "Sincronize suas músicas entre dispositivos e serviços.",
 	"author": "Gepetojj <contato.gepetojj@gmail.com>",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {

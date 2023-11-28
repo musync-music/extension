@@ -1,6 +1,6 @@
 {
 	"name": "Musync",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"description": "Sincronize suas músicas entre dispositivos e serviços.",
 	"manifest_version": 3,
 	"author": "Gepetojj <contato.gepetojj@gmail.com>",
@@ -11,14 +11,20 @@
 	},
 	"content_scripts": [
 		{
+			"js": ["content.js"],
+			"matches": ["*://music.youtube.com/*", "*://open.spotify.com/*"]
+		},
+		{
 			"js": ["yt-music-crawler.js"],
 			"matches": ["*://music.youtube.com/*"],
 			"world": "MAIN",
 			"run_at": "document_end"
 		},
 		{
-			"js": ["content.js"],
-			"matches": ["*://music.youtube.com/*"]
+			"js": ["spotify-crawler.js"],
+			"matches": ["*://open.spotify.com/*"],
+			"world": "MAIN",
+			"run_at": "document_end"
 		}
 	],
 	"background": {
