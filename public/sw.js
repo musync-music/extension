@@ -1,5 +1,3 @@
-import { getURL } from "../src/utils/server";
-
 function uniqueId() {
 	var randomPool = new Uint8Array(32);
 	crypto.getRandomValues(randomPool);
@@ -34,7 +32,7 @@ chrome.runtime.onMessage.addListener(req => {
 			media: req.media,
 		};
 
-		fetch(`${getURL(true)}/api/log/sync`, {
+		fetch(`https://musyncmusic.vercel.app/api/log/sync`, {
 			mode: "no-cors",
 			method: "POST",
 			headers: {

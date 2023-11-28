@@ -2,13 +2,13 @@
 	"name": "musync-extension",
 	"description": "Sincronize suas músicas entre dispositivos e serviços.",
 	"author": "Gepetojj <contato.gepetojj@gmail.com>",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon",
 		"prebuild": "rimraf dist",
-		"build-prod": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
+		"build-prod": "yarn prebuild && cross-env NODE_ENV=production webpack --config webpack.config.production.js",
 		"build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
 		"format": "prettier . --write",
 		"commit": "yarn format && git add . && git cz"
